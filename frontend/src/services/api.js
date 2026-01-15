@@ -1,36 +1,28 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: process.env.REACT_APP_API_URL,
 });
-
 
 export const userAPI = {
   register: (data) => API.post("/users/register", data),
   login: (data) => API.post("/users/login", data),
+  sendOtp: (data) => API.post("/users/send-otp", data),
+  verifyOtp: (data) => API.post("/users/verify-otp", data),
 };
 
-
 export const productAPI = {
-  // GET ALL PRODUCTS
   getAll: () => API.get("/products"),
 
-  // CREATE PRODUCT (with images)
   create: (data) =>
     API.post("/products", data, {
       headers: { "Content-Type": "multipart/form-data" },
     }),
 
-  // UPDATE PRODUCT (edit / publish / unpublish)
-  update: (id, data) =>
-    API.put(`/products/${id}`, data, {
-      headers: { "Content-Type": "multipart/form-data" },
-    }),
+  update: (id, data) => API.put(`/products/${id}`, data),
 
-  // DELETE PRODUCT
   delete: (id) => API.delete(`/products/${id}`),
 };
-
 
 export const orderAPI = {
   create: (data) => API.post("/orders", data),
