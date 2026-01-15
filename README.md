@@ -1,2 +1,1 @@
-# Productr
-Productr is a full-stack product management platform that allows users to manage products, publish/unpublish listings, and authenticate securely using OTP-based login via email or phone. Built with React, Node.js, Express, MongoDB, and Brevo SMTP for transactional emails.
+Productr is a full-stack MERN application that enables product CRUD operations with publish/unpublish functionality and secure OTP-based authentication using email and phone. The backend uses Nodemailer for email OTP delivery, with the system designed for future SMS integration.
