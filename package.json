@@ -1,7 +1,7 @@
 {
   "name": "orufy-assignment",
   "version": "1.0.0",
-  "description": "Full Stack Developer Assignment - Orufy Technologies",
+  "description": "Orufy Technologies",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
